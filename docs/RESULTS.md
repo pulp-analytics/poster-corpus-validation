@@ -377,6 +377,29 @@ hard zero-OCR filter costs the 26.5% of zero-OCR posters that are real,
 legitimately textless releases) -- not done yet, flagged here as a real,
 already-quantified gap rather than a new one.
 
+**Extended to a full census in the sibling `poster-metrics-pipeline`
+repo** -- see `data/ground_truth/poster_type_census_full.csv` (new file,
+does not replace `poster_type_human_labels.csv` above; both are kept).
+That work resolved every one of `poster-metrics-pipeline`'s 4,879
+`title_ocr_qa_verdict == "no_title_on_poster"` ids (a related but not
+identical selection to this file's `ocr_chars == 0`, ~1,900 ids overlap
+between the two) to a real verdict, then went further: tracing every
+process downstream of Rekognition's OCR text turned up **1,256 ids where
+`ocr_chars == 0` but the Nova QA pass never fired `no_title_on_poster`
+at all** -- invisible to both this file's selection and the 4,879 above,
+found only by following the dependency chain. Blind review of all 1,256:
+**91.4% have a real title Nova missed entirely**, and -- the surprising
+part -- the English/Latin-script slice of that same population was
+**85-86% wrong too**, almost as bad as the non-Latin-script rows this
+file already flagged as the weak spot (Japanese 26.8% vs 6.9% above).
+The failure isn't just "Rekognition/Nova read non-Latin scripts poorly"
+-- it's that Nova's verdict degrades toward noise whenever the
+underlying OCR evidence it's shown is empty, in any language. Combined
+census: 6,135 ids, 61.1% `no_es_poster` / 38.3% `es_poster` / 0.6%
+`no_seguro` -- the same directional finding as this file's 73.1%, but a
+meaningfully lower `no_es_poster` rate once the newly-found 1,256-id gap
+is folded in.
+
 ## Gate 15: content moderation, live-verified
 
 Found while manually reviewing the poster-type sample (above): some real
