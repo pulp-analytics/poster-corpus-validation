@@ -15,9 +15,8 @@ poster analysis project, published as [What Fear Looks Like](https://pulpanalyti
 [docs/RESULTS.md](docs/RESULTS.md).
 
 The 69,789 titles are the wide set this tooling ran on. The published essay
-measures 33,619 films after its own filters (English-language, released, a
-servable poster, no Animation, Music or TV Movie, plus exclusion lists), so
-the two numbers count different things.
+keeps 33,619 of them after its own filters (English-language, released, a
+servable poster, no Animation, Music or TV Movie, plus exclusion lists).
 
 ## Quick start
 
