@@ -173,7 +173,7 @@ matching its output byte-for-byte against the real
 `_swaps.csv` (262 candidates, 78 proposed) files. Earlier drafts of the
 public-facing article describing this gate said "Nova Pro" — that's
 wrong; searched both the local pipeline checkout and the author's
-personal GitHub repo (`juanpduque/what-fear-looks-like`) for a
+private repository for the essay for a
 Nova/Bedrock-based version of this specific gate and found none.
 
 `13_find_alternate_posters.py` (TMDB discovery + download, no AWS,
