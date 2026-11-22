@@ -10,8 +10,13 @@ alternate-title databases (IMDb, TMDB) to tell real errors apart from false
 positives.
 
 Part of the [Pulp Analytics](https://github.com/pulp-analytics) horror
-poster analysis project ("The Anatomy of Fear"). Real results from the full
-run: [docs/RESULTS.md](docs/RESULTS.md).
+poster analysis project, published as [What Fear Looks Like](https://pulpanalytics.com/) (working title:
+"The Anatomy of Fear"). Real results from the full run:
+[docs/RESULTS.md](docs/RESULTS.md).
+
+The 69,789 titles are the wide set this tooling ran on. The published essay
+keeps 33,619 of them after its own filters (English-language, released, a
+servable poster, no Animation, Music or TV Movie, plus exclusion lists).
 
 ## Quick start
 
